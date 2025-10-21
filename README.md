@@ -9,13 +9,6 @@ Este projeto é um exemplo de teste de arquitetura distribuída, utilizando comu
 ## 💡 Objetivos
 
 1.  Demonstrar a comunicação assíncrona utilizando um *Message Broker*.
-2.  Aplicar o princípio de responsabilidade única (*Single Responsibility Principle*).
-3.  Garantir o desacoplamento entre a lógica de registro de usuários e a lógica de envio de e-mails.
+2.  Garantir o desacoplamento entre a lógica de registro de usuários e a lógica de envio de e-mails.
 
-## ⚙️ Estrutura do Projeto e Comunicação
 
-| Microsserviço | Responsabilidade Primária | Papel no Broker |
-| :--- | :--- | :--- |
-| **User Service** | Gerenciamento de Usuários (CRUD) | **Produtor** (Publisher) |
-| **Email Service** | Envio de Notificações | **Consumidor** (Subscriber) |
-| **RabbitMQ** | Fila de Mensagens (Broker) | Canal de Comunicação Assíncrona |

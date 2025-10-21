@@ -1,16 +1,21 @@
-## Projeto de Microsserviços — User & Email
 
-Este projeto é composto por dois microsserviços independentes, que se comunicam de forma assíncrona por meio do RabbitMQ (CloudAMQP).
-O objetivo é demonstrar uma arquitetura distribuída, escalável e desacoplada, aplicando boas práticas de microsserviços.
 
-## Estrutura do Projeto
-User Service
-##Responsável por:
-Registrar novos usuários, com todas as validações necessárias.
+# 🚀 Projeto de Microsserviços: User & Email
 
-Atuar como produtor, enviando uma mensagem para a fila no RabbitMQ assim que um novo cadastro é concluído com sucesso.
-Email Service
-##Responsável por:
-Consumir as mensagens da fila.
-Capturar o e-mail do usuário recém-registrado.
-Enviar uma mensagem de confirmação de cadastro.
+Este projeto é um exemplo de teste de arquitetura distribuída, utilizando comunicação assíncrona para demonstrar desacoplamento e escalabilidade.
+
+É composto por dois microsserviços independentes que se comunicam através do **RabbitMQ** (CloudAMQP).
+
+## 💡 Objetivos
+
+1.  Demonstrar a comunicação assíncrona utilizando um *Message Broker*.
+2.  Aplicar o princípio de responsabilidade única (*Single Responsibility Principle*).
+3.  Garantir o desacoplamento entre a lógica de registro de usuários e a lógica de envio de e-mails.
+
+## ⚙️ Estrutura do Projeto e Comunicação
+
+| Microsserviço | Responsabilidade Primária | Papel no Broker |
+| :--- | :--- | :--- |
+| **User Service** | Gerenciamento de Usuários (CRUD) | **Produtor** (Publisher) |
+| **Email Service** | Envio de Notificações | **Consumidor** (Subscriber) |
+| **RabbitMQ** | Fila de Mensagens (Broker) | Canal de Comunicação Assíncrona |

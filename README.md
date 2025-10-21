@@ -5,12 +5,12 @@ O objetivo é demonstrar uma arquitetura distribuída, escalável e desacoplada,
 
 ## Estrutura do Projeto
 User Service
-Responsável por:
+##Responsável por:
 Registrar novos usuários, com todas as validações necessárias.
 
 Atuar como produtor, enviando uma mensagem para a fila no RabbitMQ assim que um novo cadastro é concluído com sucesso.
 Email Service
-Responsável por:
+##Responsável por:
 Consumir as mensagens da fila.
 Capturar o e-mail do usuário recém-registrado.
 Enviar uma mensagem de confirmação de cadastro.
